@@ -5,6 +5,7 @@ import com.blog.security.JwtAuthFilter;
 import com.blog.security.UserDetailsServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,6 +20,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+@Slf4j
 @Configuration
 @EnableMethodSecurity
 @RequiredArgsConstructor
@@ -38,6 +40,8 @@ public class SecurityConfig {
                         .anyRequest().permitAll())
                 .exceptionHandling(handler -> handler
                         .authenticationEntryPoint((req, resp, ex) -> {
+                            log.warn("Unauthorized access: method={}, path={}, remoteIp={}",
+                                    req.getMethod(), req.getRequestURI(), req.getRemoteAddr());
                             resp.setStatus(401);
                             resp.setContentType("application/json;charset=UTF-8");
                             resp.getWriter().write(mapper.writeValueAsString(ApiResponse.error(401, "Unauthorized")));

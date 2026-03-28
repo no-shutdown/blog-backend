@@ -3,6 +3,7 @@ com\blog\repository\TagRepository.class
 com\blog\dto\LoginResponse.class
 com\blog\entity\Link$LinkStatus.class
 com\blog\BlogApplication.class
+com\blog\config\RequestLoggingFilter.class
 com\blog\entity\Article$ArticleBuilder.class
 com\blog\controller\UploadController.class
 com\blog\interceptor\CommentRateLimitInterceptor.class

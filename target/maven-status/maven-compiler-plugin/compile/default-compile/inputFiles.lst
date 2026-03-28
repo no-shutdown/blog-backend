@@ -1,6 +1,7 @@
 D:\a-my-work\blog-backend\src\main\java\com\blog\controller\CommentController.java
 D:\a-my-work\blog-backend\src\main\java\com\blog\repository\UserRepository.java
 D:\a-my-work\blog-backend\src\main\java\com\blog\dto\CommentStatusRequest.java
+D:\a-my-work\blog-backend\src\main\java\com\blog\config\RequestLoggingFilter.java
 D:\a-my-work\blog-backend\src\main\java\com\blog\dto\ArticleRequest.java
 D:\a-my-work\blog-backend\src\main\java\com\blog\entity\Page.java
 D:\a-my-work\blog-backend\src\main\java\com\blog\service\PageService.java

@@ -1,12 +1,13 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/blog_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
     username: root
-    password: root
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: validate
+    show-sql: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
@@ -21,7 +22,7 @@ spring:
 
 blog:
   jwt:
-    secret: blog-application-jwt-secret-key-must-be-at-least-256-bits-long
+    secret: 8QmWn4vB3xTz9Lk2pR6sYd1Hj7Nc5Fa0UvE3Gi8Kb2Pw9Xt4Qm6Zn1Ls7Dh5Vr3C
     expiration: 604800
   upload:
     path: ./uploads/images/
@@ -30,3 +31,15 @@ blog:
 
 server:
   port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+logging:
+  level:
+    root: INFO
+    com.blog: INFO
+    org.springframework.web: WARN
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN
+    org.hibernate.orm.jdbc.bind: OFF
