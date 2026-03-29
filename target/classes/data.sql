@@ -1,5 +1,5 @@
 INSERT INTO `user` (`username`, `password`, `role`)
-SELECT 'admin', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBpwTTyZQFsuDK', 'ROLE_ADMIN'
+SELECT 'admin', '$2b$10$u4gcDAFLgD6AfwjzScdXS.1uJ9XA3RXKqzHaqcTwETNkAJAc5ARKy', 'ROLE_ADMIN'
 WHERE NOT EXISTS (SELECT 1 FROM `user` WHERE `username` = 'admin');
 
 INSERT INTO `page` (`slug`, `title`, `content`, `content_type`)
